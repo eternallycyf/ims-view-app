@@ -1,9 +1,9 @@
-import px2vw from 'postcss-px-to-viewport';
+import px2vw from 'postcss-px-to-viewport-8-plugin';
 
 export default [
   px2vw({
     unitToConvert: 'px', // 要转化的单位
-    viewportwidth: 375, // 视窗宽度
+    viewportWidth: 375, // 视窗宽度
     viewportHeight: 1200, // 视窗高度
     unitPrecision: 4, // 转换后的精度，即小数点位数
     propList: ['*'], // 指定转换的css属性的单位，＊代表所有

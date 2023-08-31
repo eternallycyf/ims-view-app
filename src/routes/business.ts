@@ -2,4 +2,9 @@
 import home from '../business/views/home/stage-config';
 import my from '../business/views/my/stage-config';
 
-export default [home, my];
+export default [
+
+  home,
+
+  my,
+]

@@ -3,10 +3,11 @@
   "author": "eternallycyf <969475322@qq.com>",
   "scripts": {
     "biz-init": "ts-node scripts/generateBizConfig.ts",
-    "start": "npm run biz-init && cross-env APP_ENV=development umi dev",
-    "build:dev": "npm run biz-init && cross-env APP_ENV=development umi build",
-    "build:pro": "npm run biz-init && cross-env APP_ENV=production umi build",
-    "postinstall": "umi generate tmp",
+    "start": "npm run biz-init && cross-env APP_ENV=development max dev",
+    "build:dev": "npm run biz-init && cross-env APP_ENV=development max build",
+    "build:pro": "npm run biz-init && cross-env APP_ENV=production max build",
+    "setup": "max setup",
+    "postinstall": "max setup",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
@@ -23,6 +24,7 @@
     ]
   },
   "dependencies": {
+    "@umijs/max": "^4.0.78",
     "@ant-design/pro-layout": "^7.16.11",
     "antd-mobile": "^5.32.1",
     "antd-mobile-icons": "^0.3.0",
@@ -38,23 +40,24 @@
     "querystring": "^0.2.1",
     "react-activation": "^0.12.4",
     "react-use": "^17.4.0",
-    "umi": "^4.0.78",
     "vconsole": "^3.15.1"
   },
   "devDependencies": {
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.11",
-    "typescript": "^5.0.3",
     "@types/crypto-js": "^4.1.1",
     "@types/lodash": "^4.14.197",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
     "@umijs/preset-react": "^1.8.32",
     "@umijs/test": "^4.0.78",
     "cross-env": "^7.0.3",
     "ejs": "^3.1.9",
     "lint-staged": "^14.0.1",
-    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^3.0.3",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.3",
     "ts-node": "^10.9.1",
+    "typescript": "^5.0.3",
     "yorkie": "^2.0.0",
-    "prettier": "^3.0.3"
+    "postcss-px-to-viewport-8-plugin": "^1.2.2"
   }
 }
