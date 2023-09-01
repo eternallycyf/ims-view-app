@@ -4,7 +4,17 @@ import bizRouter from './business';
 const Router = [
   {
     path: '/',
-    routes: [...flatMap(bizRouter)],
+    routes: [
+      ...flatMap(bizRouter),
+      {
+        path: '/',
+        redirect: 'home',
+      },
+      {
+        path: '*',
+        component: '@/pages/404',
+      },
+    ],
   },
 ];
 module.exports = Router;
