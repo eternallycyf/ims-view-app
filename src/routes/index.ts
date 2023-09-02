@@ -4,6 +4,8 @@ import bizRouter from './business';
 const Router = [
   {
     path: '/',
+    hideInPanelTab: true,
+    // wrappers: ['@/core/Enhance/Authorized'],
     routes: [
       ...flatMap(bizRouter),
       {
@@ -17,4 +19,5 @@ const Router = [
     ],
   },
 ];
-module.exports = Router;
+
+export default Router;

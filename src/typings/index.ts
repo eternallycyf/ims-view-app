@@ -9,3 +9,16 @@ export interface IPagingProps<T> {
   totalCount: number;
   totalPage: number;
 }
+
+// 用户信息
+export interface UserInfo<T> {
+  userId?: T;
+  groupId?: T;
+  username?: string;
+  nickname?: string;
+  phone?: string;
+  email?: string;
+  avatar?: string;
+  authority?: string[];
+  [otherField: string]: any;
+}

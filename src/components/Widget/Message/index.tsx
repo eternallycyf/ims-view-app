@@ -6,7 +6,7 @@ import {
 } from 'antd-mobile-icons';
 import styles from './index.less';
 
-export function Message(
+export default function Message(
   content: ToastShowProps['content'],
   type: 'success' | 'error' | 'warning' | 'info',
   afterClose?: ToastShowProps['afterClose'],

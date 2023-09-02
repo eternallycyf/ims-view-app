@@ -1,4 +1,4 @@
-import { Message } from '@/component/Widget/Message';
+import { Message } from '@/components/Widget';
 import { apiPrefixMock, tokenKey } from '@/config';
 import axios, { AxiosRequestConfig, AxiosResponse, Canceler } from 'axios';
 import { MD5 } from 'crypto-js';

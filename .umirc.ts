@@ -1,6 +1,6 @@
 import { defineConfig } from '@umijs/max';
 import extraPostCSSPlugins from './config/extraPostCSSPlugins';
-const routerConfig = require('./src/routes');
+import routerConfig from './src/routes';
 const proxyConfig = require('./src/config/proxyConfig');
 const path = require('path');
 
