@@ -1,0 +1,43 @@
+@import '/src/assets/styles/variable.less';
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: @color-bg;
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
+  color: @primary-title-color;
+
+  :global {
+    .adm-nav-bar-title {
+      flex: 1;
+    }
+
+    .adm-nav-bar-right,
+    .adm-nav-bar-left {
+      flex: none;
+    }
+
+    .adm-nav-bar {
+      padding-top: constant(safe-area-inset-top);
+      padding-top: env(safe-area-inset-top);
+      height: calc(50px + constant(safe-area-inset-top));
+      height: calc(50px + env(safe-area-inset-top));
+    }
+
+    .adm-nav-bar-right {
+      min-width: 24px;
+    }
+  }
+
+  .submitBtn {
+    color: @primary-title-color;
+    font-size: 14px;
+  }
+}
