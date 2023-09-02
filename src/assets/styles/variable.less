@@ -1,3 +1,5 @@
+@import url('../iconfont/iconfont.less');
+
 @text-pc: #1f2937;
 @text-rc: #666;
 @text-sc: #999;
@@ -9,9 +11,21 @@
 
 @color-subTitle: #7f8794;
 @color-Aplus: #d8b4fe;
+@color-A: #ffbcbc;
+@color-B: #ffdd9b;
+@color-C: #afe4ff;
+@color-D: #d0dae6;
 
-// 新版ui
 @primary-color: #2b5fdc;
+@primary-sub-color: #eaeefa;
+@primary-title-color: #111827;
+@primary-subTitle-color: #7f8794;
+@primary-hover: #4d7fe3;
+@primary-active: #1b45b8;
+
+@primary-bg: #f3f4f6;
+@color-bg: #f3f4f6;
+@color-underline: #efe7eb;
 
 @red: #E62C3B;
 @orange: #fa6a0a;
@@ -19,19 +33,183 @@
 @grey: #CACED7;
 @white: #fff;
 
-@primary-bg: #E8F3FF;
-@orange-bg: #FFF5E8;
-
-@primary-hover: #4d7fe3;
-@primary-active: #1b45b8;
-
 @success: @green;
-@warning: orange;
-@error: red;
+@warning: @orange;
+@error: @red;
 @info: @primary-color;
 
-// import variables from '@/assets/styles/variable.less';
+@orange-bg: #FFF5E8;
 
+@theme-color: #1e3a8a;
+@transition-ease-in: all 0.3s ease-in;
+@transition-ease-out: all 0.3s ease-out;
+
+
+.flexbox(@dir: row, @js: center, @ai: center) {
+  display: flex;
+  align-items: @ai;
+  flex-direction: @dir;
+  justify-content: @js;
+}
+
+.paddingTop(@top: 50px) {
+  padding-top: calc(@top + constant(safe-area-inset-top));
+  padding-top: calc(@top + env(safe-area-inset-top));
+}
+
+.formContainer.adm-form {
+  .adm-list-item {
+    border: none !important;
+  }
+
+  .adm-list-default .adm-list-body {
+    border: none;
+  }
+
+  .adm-list-item {
+    padding: 0 16px;
+
+    .adm-list-item-content {
+      padding: 13px 0;
+      border: none;
+      border-bottom: 1px solid @primary-bg;
+    }
+
+    &:last-child {
+      .adm-item-item-content {
+        border: none;
+      }
+    }
+  }
+
+  .adm-list-item-content-prefix {
+    padding: 0 !important;
+  }
+
+  .adm-list-item-content-main {
+    overflow: hidden;
+    flex: 1;
+    padding: 0 !important;
+    color: @primary-title-color;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+
+  .adm-form-item-label {
+    display: flex;
+    align-items: center;
+    color: @text-pc;
+  }
+
+  .adm-list-item-content {
+    align-items: flex-start;
+    padding-right: 0;
+    border-bottom: 1px solid @primary-bg;
+    font-size: 14px;
+  }
+
+  .adm-input-element {
+    font-size: 14px;
+  }
+
+  .adm-list-item-content-arrow {
+    margin-top: 2px;
+  }
+
+  .adm-form-item-label-required,
+  .adm-form-item-required-asterisk {
+    position: static;
+    margin-left: 4px;
+  }
+
+  .adm-form-item-feedback-error {
+    margin-top: 4px;
+    padding: 4px 8px;
+    width: 100%;
+    background: #f3f6f6;
+    color: @error;
+    text-align: left;
+    font-size: 4px;
+  }
+
+  .adm-input {
+    color: @primary-title-color;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .adm-form-item-label,
+  .adm-text-area-element {
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+
+.adm-input-element,
+.adm-text-area-element {
+  font-weight: bold;
+  font-size: 14px;
+
+  &::placeholder {
+    color: #9ca3af;
+    font-weight: normal;
+  }
+}
+
+.adm-dialog {
+  z-index: 9999;
+
+  .adm-dialog-body {
+    padding-top: 24px;
+  }
+
+  .adm-dialog-title {
+    margin-bottom: 8px;
+    color: @primary-title-color;
+    font-weight: bold;
+    font-size: 18px !important;
+  }
+
+  .adm-dialog-contnet {
+    padding-bottom: 26px;
+    color: #7f8794;
+    font-size: 15px !important;
+  }
+
+  .adm-dialog-button {
+    font-size: 15px;
+  }
+
+  .adm-center-popup-wrap {
+    right: 10%;
+    left: 10%;
+    max-width: 100%;
+    transform: translate(0, -50%);
+  }
+
+  .adm-dialog-footer {
+    .adm-dialog-button {
+      color: #7f8794;
+
+      &:last-child {
+        color: @primary-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+.adm-nav-bar {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  height: calc(50px + constant(safe-area-inset-top));
+  height: calc(50px + env(safe-area-inset-top));
+}
+
+// import variables from '@/assets/styles/variable.less';
 // variables.red
 :export {
   primary: @primary-color;

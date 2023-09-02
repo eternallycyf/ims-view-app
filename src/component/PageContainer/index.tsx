@@ -18,7 +18,7 @@ interface IProps {
   navBar?: INavBarProps;
 }
 
-const Page: FC<IProps> = (props) => {
+const PageContainer: FC<IProps> = (props) => {
   const { children, className, style, navBar } = props;
 
   const handleBack = (): void => {
@@ -44,7 +44,12 @@ const Page: FC<IProps> = (props) => {
     <div style={style} className={`${styles.container} ${className}`}>
       {navBar && (
         <div className={styles.headerContainer}>
-          <NavBar {...navBar} onBack={handleBack} right={renderRightButton()} />
+          <NavBar
+            className={styles.navBar}
+            {...navBar}
+            onBack={handleBack}
+            right={renderRightButton()}
+          />
         </div>
       )}
       {children}
@@ -52,4 +57,4 @@ const Page: FC<IProps> = (props) => {
   );
 };
 
-export default Page;
+export default PageContainer;

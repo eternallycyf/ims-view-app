@@ -1,0 +1,170 @@
+@import '/src/assets/styles/variable.less';
+@import './component/Widget/Message/index.less';
+
+// :root {
+//   --adm-color-primary: @primary-color;
+// }
+
+.adm-checkbox {
+  color: @primary-title-color;
+}
+
+.adm-popup {
+  .adm-nav-bar {
+    background: #fff;
+    color: @primary-title-color;
+  }
+}
+
+
+* {
+  -webkit-overflow-scrolling: auto !important;
+}
+
+.adm-index-bar-sidebar-item-active {
+  background: @primary-color;
+}
+
+.before_tips {
+  display: inline-block;
+  margin-right: 8px;
+  width: 3px;
+  height: 14px;
+  background: @primary-color;
+}
+
+.primaryColor {
+  color: @primary-color;
+}
+
+.adm-button-primary {
+  color: @primary-color;
+}
+
+.textarea {
+  .adm-text-area-wrapper {
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid @color-underline;
+    background: @primary-bg;
+  }
+}
+
+
+.adm-switch {
+  transform: scale(0, 8);
+}
+
+.adm-text-area-count {
+  color: #c4c7cd !important;
+  font-weight: normal;
+}
+
+body {
+  color: @text-pc;
+  font-size: 12px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link {
+  color: @primary-color;
+  font-weight: bold;
+
+  &:active {
+    color: @primary-active;
+    font-weight: bold;
+  }
+
+  &:hover {
+    color: @primary-hover;
+    font-weight: bold;
+  }
+}
+
+.selectTag {
+  box-sizing: border-box;
+  margin-right: 3.5%;
+  margin-bottom: 12px;
+  padding: 4px;
+  width: 31%;
+  background-color: @primary-bg;
+  color: #4b5563;
+  text-align: center;
+  font-size: 14px;
+
+  &:nth-child(3n+1) {
+    margin-right: 0;
+  }
+
+  &:last-child {
+    margin-right: 0 !important;
+  }
+
+
+  &:active {
+    background-color: @primary-sub-color;
+    color: @primary-color;
+    font-weight: bold;
+  }
+
+  &.wordMore {
+    font-size: 12px;
+  }
+}
+
+div,
+span {
+  word-break: break-all;
+}
+
+.tag {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  max-height: 34px;
+}
+
+.tagItem {
+  margin-top: 4px;
+  margin-right: 4px;
+  padding: 6px;
+  background-color: #f0f6ff;
+  color: @primary-color;
+  font-size: 12px;
+
+  .icon {
+    margin-left: 2px;
+  }
+}
+
+.singleTag {
+  display: inline-block;
+  padding: 3px 6px;
+  background: #dbeafe;
+  color: @primary-color;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.adm-nav-bar-title {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.formItemCenter {
+  .flexbox(row, flex-end);
+}
+
+.rightIcon {
+  margin: 0;
+  margin-left: 6px;
+  color: #c3c7cd;
+  font-weight: normal;
+}

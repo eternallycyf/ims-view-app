@@ -1,25 +1,22 @@
+import { withKeepAlive } from '@/Enhance/withKeepLive';
+import Page from '@/component/Page';
 import { useState } from 'react';
-import KeepAlive from 'react-activation';
-import styles from './index.less';
 import { history } from 'umi';
+import styles from './index.less';
 
 const My = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div className={styles.foo}>
-      <h1>My</h1>
-      <p>count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>add</button>
-      <button onClick={() => history.push('/home')}>go home</button>
-    </div>
+    <Page navBar={{ children: 'my', backArrow: true }}>
+      <div className={styles.foo}>
+        <h1>My</h1>
+        <p>count: {count}</p>
+        <button onClick={() => setCount(count + 1)}>add</button>
+        <button onClick={() => history.push('/home')}>go home</button>
+      </div>
+    </Page>
   );
 };
 
-export default function (props: any) {
-  return (
-    <KeepAlive name="my" when={true}>
-      <My {...props} />
-    </KeepAlive>
-  );
-}
+export default withKeepAlive(My);
