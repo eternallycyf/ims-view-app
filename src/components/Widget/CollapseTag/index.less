@@ -1,0 +1,79 @@
+@import '~@/assets/styles/variable.less';
+
+
+.tag {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  max-height: 34px;
+
+  .tagItem {
+    box-sizing: border-box;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 6px;
+    background: #f0f6ff;
+    color: @primary-color;
+    font-size: 12px;
+
+    .flexbox();
+
+    .icon {
+      margin-right: 0;
+      margin-left: 2px;
+      font-size: 14px;
+      line-height: 12px;
+    }
+  }
+}
+
+.subTitle {
+  margin-top: 8px;
+  color: #8e96a4;
+  text-align: left;
+  font-size: 12px;
+}
+
+.collapse {
+  margin-top: 8px;
+  width: 100%;
+  color: #8e96a4;
+  text-align: center;
+  font-size: 12px;
+
+  .flexbox();
+
+  .icon {
+    margin-left: 4px;
+    color: #8e96a4;
+    font-size: 12px;
+  }
+}
+
+
+.titleCard {
+  width: 100%;
+
+  .flexbox(row, space-between);
+}
+
+.add {
+  color: @primary-color;
+  font-size: 12px;
+
+  .flexbox();
+
+  .icon {
+    font-size: 12px;
+  }
+}
+
+.collapseTag {
+  margin-left: 8px;
+
+  .icon {
+    margin-left: 2px;
+    font-size: 12px;
+  }
+}

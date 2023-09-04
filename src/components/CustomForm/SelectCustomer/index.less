@@ -1,0 +1,18 @@
+@import '~@/assets/styles/variable.less';
+@import url(../index.less);
+
+.scroll-container {
+  overflow-y: auto;
+  flex: 1;
+  width: 100%;
+
+  :global {
+    .adm-list-item-content-extra {
+      line-height: 1;
+    }
+
+    .adm-list-item-content-main {
+      font-size: 14px;
+    }
+  }
+}

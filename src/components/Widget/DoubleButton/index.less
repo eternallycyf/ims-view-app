@@ -1,0 +1,30 @@
+@import '~@/assets/styles/variable.less';
+
+.buttonBtn {
+  padding: 8px 16px;
+  border-top: 1px solid @primary-bg;
+  background: #fff;
+
+  .flexbox(row, space-between);
+
+  .btn {
+    height: 44px;
+    border-radius: 4px;
+
+    &:first-child {
+      width: 30%;
+      border-color: @primary-sub-color;
+      background-color: @primary-sub-color;
+      color: @primary-color;
+
+      &.cancel {
+        background: @primary-bg;
+        color: #4b5563;
+      }
+    }
+
+    &:last-child {
+      width: 65%;
+    }
+  }
+}

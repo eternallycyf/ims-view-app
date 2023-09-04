@@ -16,7 +16,7 @@ const Icon: FC<IconProps> = (props) => {
   const { type, className, ...restProps } = props;
   return (
     <span
-      className={`${styles['iconfont']} ${styles[type]} ${className}`}
+      className={`${styles['iconfont']} ${styles.icon} ${styles[type]} ${className}`}
       {...restProps}
     />
   );

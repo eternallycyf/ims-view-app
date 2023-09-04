@@ -22,3 +22,10 @@ export interface UserInfo<T> {
   authority?: string[];
   [otherField: string]: any;
 }
+
+export interface ICustomerItemProps {
+  creditNo?: string;
+  id?: string;
+  nameAndDept?: string;
+  text?: string;
+}
