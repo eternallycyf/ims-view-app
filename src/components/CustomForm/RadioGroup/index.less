@@ -1,1 +1,24 @@
 @import '~@/assets/styles/variable.less';
+
+.icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+:global {
+
+  .adm-radio {
+    margin-right: 12px;
+
+    .adm-radio-content {
+      color: @primary-title-color;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
