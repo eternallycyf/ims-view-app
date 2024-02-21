@@ -1,8 +1,9 @@
 {
   "private": true,
+  "type": "module",
   "author": "eternallycyf <969475322@qq.com>",
   "scripts": {
-    "biz-init": "ts-node scripts/generateBizConfig.ts",
+    "biz-init": "ts-node-esm scripts/generateBizConfig.ts",
     "start": "npm run biz-init && cross-env APP_ENV=development max dev",
     "build:dev": "npm run biz-init && cross-env APP_ENV=development max build",
     "build:pro": "npm run biz-init && cross-env APP_ENV=production max build",
@@ -25,7 +26,9 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^7.16.11",
+    "@types/ejs": "^3.1.5",
     "@umijs/max": "^4.0.78",
+    "antd": "^5.14.1",
     "antd-mobile": "^5.32.1",
     "antd-mobile-icons": "^0.3.0",
     "axios": "^1.5.0",
@@ -40,6 +43,7 @@
     "querystring": "^0.2.1",
     "react-activation": "^0.12.4",
     "react-use": "^17.4.0",
+    "redux": "^5.0.1",
     "vconsole": "^3.15.1"
   },
   "devDependencies": {
@@ -50,6 +54,7 @@
     "@types/react-dom": "^18.0.11",
     "@umijs/preset-react": "^1.8.32",
     "@umijs/test": "^4.0.78",
+    "chalk": "^5.3.0",
     "cross-env": "^7.0.3",
     "ejs": "^3.1.9",
     "lint-staged": "^14.0.1",
