@@ -16,6 +16,7 @@ export const FORM_TYPE_DICT = [
   'rate',
   'slider',
   'switch',
+  'selector',
 
   'picker',
   'cascadePicker',

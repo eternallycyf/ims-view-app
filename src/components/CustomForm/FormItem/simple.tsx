@@ -15,6 +15,8 @@ import {
   RadioProps,
   Rate,
   RateProps,
+  Selector,
+  SelectorProps,
   Slider,
   SliderProps,
   Stepper,
@@ -45,7 +47,8 @@ type ISimpleBaseControlProps = IBaseSimpleBaseControlProps &
   CheckboxProps &
   CheckboxGroupProps &
   RadioProps &
-  RadioGroupProps;
+  RadioGroupProps &
+  SelectorProps<any>;
 
 export interface ISimpleControlProps<T = AnyObject>
   extends Omit<IBaseCustomFormItemProps<T>, 'type'> {
@@ -65,6 +68,7 @@ export interface ISimpleControlProps<T = AnyObject>
     | 'slider'
     | 'checkbox'
     | 'radio'
+    | 'selector'
     | 'custom';
   value: T;
 }
@@ -157,6 +161,14 @@ const SimpleControl = React.forwardRef<any, ISimpleControlProps>(
             </RadioComp>
           ))}
         </RadioGroup>
+      );
+    } else if (type == 'selector') {
+      return (
+        <Selector
+          ref={ref}
+          options={controlProps?.options || []}
+          {...controlProps}
+        />
       );
     } else {
       if (type === 'switch') {

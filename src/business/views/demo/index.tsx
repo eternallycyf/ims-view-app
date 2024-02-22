@@ -23,58 +23,18 @@ export const basicColumns = [
   ],
 ];
 
-const options = [
+export const options = [
   {
-    label: '浙江',
-    value: '浙江',
-    children: [
-      {
-        label: '杭州',
-        value: '杭州',
-      },
-      {
-        label: '宁波',
-        value: '宁波',
-        children: [
-          {
-            label: '街道',
-            value: '街道',
-            children: [
-              {
-                label: '小区1',
-                value: '小区1',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    label: '选项一',
+    value: '1',
   },
   {
-    label: '江苏',
-    value: '江苏',
-    children: [
-      {
-        label: '南京',
-        value: '南京',
-      },
-      {
-        label: '苏州',
-        value: '苏州',
-        children: [
-          {
-            label: '街道',
-            value: '街道',
-            children: [
-              {
-                label: '小区2',
-                value: '小区2',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    label: '选项二',
+    value: '2',
+  },
+  {
+    label: '选项三',
+    value: '3',
   },
 ];
 
@@ -216,9 +176,15 @@ const Demo = (props) => {
       name: 'datePicker',
       label: 'datePicker',
       type: 'datePicker',
+      controlProps: {},
+    },
+    {
+      name: 'selector',
+      label: 'selector',
+      type: 'selector',
       controlProps: {
-        options: basicColumns,
-        columns: basicColumns,
+        options,
+        multiple: true,
       },
     },
   ];

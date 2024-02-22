@@ -59,10 +59,10 @@ export const getFieldComp: FieldCompType = ({
     case 'switch':
     case 'slider':
     case 'stepper':
+    case 'selector':
     case 'custom':
       FieldComp = Simple;
       break;
-
     case 'picker':
     case 'cascadePicker':
     case 'datePicker':
