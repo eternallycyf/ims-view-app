@@ -206,7 +206,12 @@ const Demo = (props) => {
         }
       >
         {formList.map((item, index) => (
-          <Fragment key={index}>{renderFormItem({ ...item, form })}</Fragment>
+          <Fragment key={index}>
+            {renderFormItem({
+              ...item,
+              form: item?.type == 'update' ? undefined : form
+            })}
+          </Fragment>
         ))}
       </Form>
 

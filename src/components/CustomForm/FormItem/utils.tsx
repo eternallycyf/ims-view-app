@@ -81,16 +81,18 @@ export const getFieldComp: FieldCompType = ({
   if (form) {
     return (
       <Form.Item
-        key={name || getUUID()}
+        key={name}
         name={name}
         label={label ?? ''}
+        rules={formProps?.rules || []}
         {...(formProps?.itemProps as any)}
       >
         <FieldComp {...formProps} />
       </Form.Item>
     );
   } else {
-    return <FieldComp key={name || getUUID()} {...formProps} />;
+    // TODO: 如果用了 Suspense, Form.Item就传递不了onchange value了 需要类似上边的
+    return <FieldComp key={name} {...formProps} />;
   }
 };
 

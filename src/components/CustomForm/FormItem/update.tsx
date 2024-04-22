@@ -20,13 +20,14 @@ export interface IUpdateControlProps<
       | false
       | React.ReactNode
       | DeepPartial<ISearchesType<Values, Rest, Extra>>;
+    isComponent?: boolean;
   };
 }
 
 const UpdateControl = React.forwardRef<any, IUpdateControlProps>(
   (props, ref) => {
     const { itemProps = {}, ...controlProps } = props;
-    const { next, shouldUpdate } = itemProps;
+    const { next, shouldUpdate, isComponent = true } = itemProps;
 
     useImperativeHandle(ref, () => ({}));
 
@@ -48,21 +49,26 @@ const UpdateControl = React.forwardRef<any, IUpdateControlProps>(
 
           return (
             <Fragment key={getUUID()}>
-              {((nextValues as any[]) || []).map((item: any, index: number) => (
-                <Fragment key={index}>
-                  <Form.Item
-                    labelAlign="right"
-                    label={item?.label}
-                    name={item?.name}
-                    rules={item?.rules || []}
-                    initialValue={item?.initialValue}
-                    {...item.layout}
-                    {...item.itemProps}
-                  >
-                    {renderFormItem(item)}
-                  </Form.Item>
-                </Fragment>
-              ))}
+              {((nextValues as any[]) || []).map((item: any, index: number) => {
+                if (!isComponent) {
+                  return <Fragment key={index}>{renderFormItem({ ...item, form })}</Fragment>
+                }
+                return (
+                  <Fragment key={index}>
+                    <Form.Item
+                      labelAlign="right"
+                      label={item?.label}
+                      name={item?.name}
+                      rules={item?.rules || []}
+                      initialValue={item?.initialValue}
+                      {...item.layout}
+                      {...item.itemProps}
+                    >
+                      {renderFormItem(item)}
+                    </Form.Item>
+                  </Fragment>
+                )
+              })}
             </Fragment>
           );
         }}

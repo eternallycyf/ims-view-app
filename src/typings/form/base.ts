@@ -36,6 +36,7 @@ export type ItemProps<Values, Rest, Extra> = FormItemProps & {
     | false
     | React.ReactNode
     | DeepPartial<ISearchesType<Values, Rest, Extra>>;
+  isComponent?: boolean;
 };
 
 export interface IFetchConfig<Record = AnyObject> {
@@ -59,9 +60,9 @@ export interface IBaseControlProps<
   Rest = AnyObject,
   Extra = unknown,
 > extends Pick<
-    Search<Values, Rest, Extra>,
-    'fetchConfig' | 'itemProps' | 'dict' | 'Component' | 'label'
-  > {}
+  Search<Values, Rest, Extra>,
+  'fetchConfig' | 'itemProps' | 'dict' | 'Component' | 'label'
+> { }
 
 export type IControlProps<
   Values = AnyObject,
