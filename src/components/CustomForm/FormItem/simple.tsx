@@ -35,7 +35,7 @@ const CheckboxGroup: any = Checkbox.Group;
 moment.locale('zh-cn');
 
 interface IBaseSimpleBaseControlProps
-  extends Pick<IBaseControlProps, 'Component' | 'dict'> {}
+  extends Pick<IBaseControlProps, 'Component' | 'dict'> { }
 
 type ISimpleBaseControlProps = IBaseSimpleBaseControlProps &
   InputProps &
@@ -60,16 +60,16 @@ export interface ISimpleControlProps<T = AnyObject>
   checked?: boolean;
   onChange: (value: T) => any;
   type:
-    | 'input'
-    | 'textarea'
-    | 'rate'
-    | 'switch'
-    | 'stepper'
-    | 'slider'
-    | 'checkbox'
-    | 'radio'
-    | 'selector'
-    | 'custom';
+  | 'input'
+  | 'textarea'
+  | 'rate'
+  | 'switch'
+  | 'stepper'
+  | 'slider'
+  | 'checkbox'
+  | 'radio'
+  | 'selector'
+  | 'custom';
   value: T;
 }
 
@@ -149,7 +149,7 @@ const SimpleControl = React.forwardRef<any, ISimpleControlProps>(
     } else if (type === 'radio') {
       let RadioComp: any = Radio;
       return (
-        <RadioGroup ref={ref} {...controlProps}>
+        <RadioGroup key={props?.value} ref={ref} {...controlProps}>
           {dict?.map((item) => (
             <RadioComp
               {...item}
